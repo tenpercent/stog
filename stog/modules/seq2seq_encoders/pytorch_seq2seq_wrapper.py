@@ -1,3 +1,4 @@
+from typing import Tuple, Union, Optional, Callable
 from overrides import overrides
 import torch
 from torch.nn.utils.rnn import pad_packed_sequence
@@ -5,6 +6,7 @@ from torch.nn.utils.rnn import pad_packed_sequence
 from stog.utils.checks import ConfigurationError
 from stog.modules.seq2seq_encoders.seq2seq_encoder import Seq2SeqEncoder
 
+RnnState = Union[torch.Tensor, Tuple[torch.Tensor, torch.Tensor]]
 
 class PytorchSeq2SeqWrapper(Seq2SeqEncoder):
     """
@@ -61,7 +63,7 @@ class PytorchSeq2SeqWrapper(Seq2SeqEncoder):
     def is_bidirectional(self) -> bool:
         return self._is_bidirectional
 
-    @overrides
+    # @overrides
     def forward(self,  # pylint: disable=arguments-differ
                 inputs: torch.Tensor,
                 mask: torch.Tensor,

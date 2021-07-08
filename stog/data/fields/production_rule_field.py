@@ -94,7 +94,7 @@ class ProductionRuleField(Field[ProductionRuleArray]):  # type: ignore
             tensor = None
         return (self.rule, self.is_global_rule, tensor)
 
-    @overrides
+    # @overrides
     def empty_field(self): # pylint: disable=no-self-use
         # This _does_ get called, because we don't want to bother with modifying the ListField to
         # ignore padding for these.  We just make sure the rule is the empty string, which the

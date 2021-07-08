@@ -31,7 +31,7 @@ class STOGPredictor(Predictor):
         source = json_dict["source"]
         return self._dataset_reader.text_to_instance(source)
 
-    @overrides
+    # @overrides
     def predict_batch_instance(self, instances):
         outputs = []
         gen_vocab_size = self._model.vocab.get_vocab_size('decoder_token_ids')
@@ -78,7 +78,7 @@ class STOGPredictor(Predictor):
 
         return outputs
 
-    @overrides
+    # @overrides
     def dump_line(self, output):
         # return ' '.join(output['nodes']) + '\n'
         pred_graph = AMRGraph.from_prediction(output)

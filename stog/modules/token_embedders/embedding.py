@@ -118,7 +118,7 @@ class Embedding(TokenEmbedder):
     def get_output_dim(self) -> int:
         return self.output_dim
 
-    @overrides
+    # @overrides
     def forward(self, inputs):  # pylint: disable=arguments-differ
         original_inputs = inputs
         if original_inputs.dim() > 2:

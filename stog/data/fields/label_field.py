@@ -92,7 +92,7 @@ class LabelField(Field[torch.Tensor]):
         tensor = torch.tensor(self._label_id, dtype=torch.long)
         return tensor
 
-    @overrides
+    # @overrides
     def empty_field(self):
         return LabelField(-1, self._label_namespace, skip_indexing=True)
 

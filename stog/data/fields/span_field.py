@@ -52,7 +52,7 @@ class SpanField(Field[torch.Tensor]):
         tensor = torch.LongTensor([self.span_start, self.span_end])
         return tensor
 
-    @overrides
+    # @overrides
     def empty_field(self):
         return SpanField(-1, -1, self.sequence_field.empty_field())
 

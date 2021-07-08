@@ -78,7 +78,7 @@ class ListField(SequenceField[DataArray]):
                          for field in padded_field_list]
         return self.field_list[0].batch_tensors(padded_fields)
 
-    @overrides
+    # @overrides
     def empty_field(self):
         # Our "empty" list field will actually have a single field in the list, so that we can
         # correctly construct nested lists.  For example, if we have a type that is

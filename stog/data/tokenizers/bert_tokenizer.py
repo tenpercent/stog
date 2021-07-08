@@ -11,7 +11,7 @@ class AMRBertTokenizer(BertTokenizer):
     def __init__(self, *args, **kwargs):
         super(AMRBertTokenizer, self).__init__(*args, **kwargs)
 
-    @overrides
+    # @overrides
     def tokenize(self, tokens, split=False):
         tokens = ['[CLS]'] + tokens + ['[SEP]']
         if not split:

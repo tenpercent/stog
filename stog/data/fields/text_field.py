@@ -147,7 +147,7 @@ class TextField(SequenceField[Dict[str, torch.Tensor]]):
             tensors.update(indexer_tensors)
         return tensors
 
-    @overrides
+    # @overrides
     def empty_field(self):
         # pylint: disable=protected-access
         text_field = TextField([], self._token_indexers)
